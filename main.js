@@ -5,9 +5,9 @@ const client = new Discord.Client();
 const prefix = '+';
 
 client.once('ready', () =>{
-    console.log('Poison is Online!');
-    bot.user.setActivity('Prefix is: +', { type: "WATCHING"}).cath(console.error)
-});
+    console.log('Poison is Online!')
+    client.user.setActivity("Prefix is +")
+})
 
 client.on('message' , message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
