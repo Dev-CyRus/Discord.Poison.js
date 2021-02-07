@@ -6,6 +6,13 @@ const prefix = '+';
 
 client.once('ready', () =>{
     console.log('Poison is Online!');
+    client.user.setPresence({
+        status: "online",
+        game: {
+            name: "Getting developed by CyRus",
+            type: "Watching"
+        }
+    });
 });
 
 client.on('message' , message =>{
