@@ -22,6 +22,8 @@ client.on('message' , message =>{
         message.channel.send('https://www.youtube.com/channel/UCqKJ0NnfNEk-j8pPzDe8CFw?view_as=subscriber');
     } else if (command =='invite'){
         message.channel.send('https://discord.gg/6G4bSMzaw4');
+    } else if (command == 'mc'){
+        message.channel.send('poisonslab.aternos.me');
     }
 });
 
