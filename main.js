@@ -6,6 +6,7 @@ const prefix = '+';
 
 client.once('ready', () =>{
     console.log('Poison is Online!');
+    bot.user.setActivity('Prefix is: +', { type: "WATCHING"}).cath(console.error)
 });
 
 client.on('message' , message =>{
