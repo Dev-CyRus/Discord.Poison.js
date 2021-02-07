@@ -6,7 +6,7 @@ const prefix = '+';
 
 client.once('ready', () =>{
     console.log('Poison is Online!')
-    client.user.setActivity("Prefix is +")
+    client.user.setActivity("The prefix is +")
 })
 
 client.on('message' , message =>{
