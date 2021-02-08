@@ -30,13 +30,13 @@ client.on('message' , message =>{
     if (command === 'ping'){
         client.commands.get('ping').execute(message, args);
     } else if (command == 'hi'){
-        message.channel.send('Hello dear, How are you?');
+        client.commands.get('hi').execute(message, args);
     } else if (command == 'youtube'){
-        message.channel.send('https://www.youtube.com/channel/UCqKJ0NnfNEk-j8pPzDe8CFw?view_as=subscriber');
+        client.commands.get('youtube').execute(message, args);
     } else if (command =='invite'){
-        message.channel.send('https://discord.gg/6G4bSMzaw4');
+        client.commands.get('invite').execute(message, args);
     } else if (command == 'mc'){
-        message.channel.send('poisonslab.aternos.me');
+        client.commands.get('mc').execute(message, args);
     }
 });
 
