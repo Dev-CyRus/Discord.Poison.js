@@ -2,7 +2,7 @@ module.exports = {
     name: 'rule',
     description: "Sends all command list of poison as embed",
     execute(message, args, Discord) {
-        const newEmbed = new Discord.messageEmbed()
+        const newEmbed = new Discord.MessageEmbed()
         .setColor('#1E90FF')
         .setTitle('Rules')
         .setDescription('This is a rules embed')
@@ -19,4 +19,6 @@ module.exports = {
         message.channel.send(newEmbed);
             
     }
+    
+
 }
