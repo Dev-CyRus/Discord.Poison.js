@@ -13,7 +13,7 @@ module.exports = {
             {name: 'Rule 4', value: 'Acts of Groupism, Racism, Harassment or Hate speech against any fellow member will not be tolerated'},
             {name: 'Rule 5', value: 'Spamming /Excessive tagging/ Vertical Chatting is strictly prohibited in the server.'},
             {name: 'Rule 6', value: 'Avoid making your chat highlighted by use of any other fonts / capital letters'},
-            {name: 'Rule 7', value: 'Avoid any religious / political / sexual discussions that may lead to heated arguments'},
+            {name: 'Rule 7', value: 'Avoid any religious / political / sexual discussions that may lead to heated arguments'}
         )
 
         message.channel.send(newEmbed);
