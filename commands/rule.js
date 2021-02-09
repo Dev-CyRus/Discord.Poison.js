@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'command',
+    name: 'rule',
     description: "Sends all command list of poison as embed",
     execute(message, args, Discord) {
         const newEmbed = new Discord.messageEmbed()
