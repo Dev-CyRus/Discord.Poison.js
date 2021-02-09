@@ -40,7 +40,7 @@ client.on('message' , message =>{
         client.commands.get('invite').execute(message, args);
     } else if (command == 'mc'){
         client.commands.get('mc').execute(message, args);
-    } else if(command == 'rule'){
+    } else if (command == 'rule'){
         client.commands.get('rule').execute(message, args, Discord);
     }
 });
