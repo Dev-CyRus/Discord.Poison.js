@@ -1,7 +1,7 @@
 module.exports = {
     name: 'command',
     description: "Sends all command list of poison as embed",
-    execute(message, args, Discord) {
+    execute(message, args,) {
         const newEmbed = new Discord.messageEmbed()
         .setColor('#1E90FF')
         .setTitle('Rules')

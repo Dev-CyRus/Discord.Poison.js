@@ -41,7 +41,7 @@ client.on('message' , message =>{
     } else if (command == 'mc'){
         client.commands.get('mc').execute(message, args);
     } else if(command == 'rule'){
-        client.commands.get('rule').execute(message, args, Discord);
+        client.commands.get('rule').execute(message, args);
     }
 });
 
