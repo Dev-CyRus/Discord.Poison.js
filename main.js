@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const DisTube = require('distube');
 
 const client = new Discord.Client();
 
@@ -15,9 +16,9 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-const Distube = require('distube')
+const distube = new require('distube')
 
-client.distube = new Distube(client, {searchSongs: false, emitNewSongOnly: true});
+client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true});
 
 client.once('ready', () =>{
     console.log('Poison is Online!')

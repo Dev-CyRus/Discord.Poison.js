@@ -1,7 +1,8 @@
-const { Client } = require("discord.js");
+const { Client } = require('discord.js');
+const distube = require('distube')
 
 module.exports.run = async (bot, message, args) => {
-    const music = args.join(" ");
+    distube.play(message, args.join(" "));
 
     Client.distube.play(message, music)
 }
