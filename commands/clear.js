@@ -2,6 +2,8 @@ module.exports = {
     name: 'clear',
     description: "Clear messages",
     async execute(message, args){
+
+        if(message.member.roles.cache.has('780486972804169734'))
         if(!args[0]) return message.reply("please enter the amount of messages that you want to clear");
         if(isNaN(args [0])) return message.reply("Please enter a real number");
 
