@@ -29,7 +29,10 @@ client.on('guildMemberAdd', guildMember =>{
     let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'untrusted');
 
     guildMember.roles.add(welcomeRole);
+    
 });
+
+
 client.on('message' , message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
