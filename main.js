@@ -26,7 +26,7 @@ client.once('ready', () =>{
 });
 
 client.on('guildMemberAdd', guildMember =>{
-    let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === '▬▬▬ 【 ᴜɴᴛʀᴜꜱᴛᴇᴅ 】▬▬▬');
+    let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'untrusted');
 
     guildMember.roles.add(welcomeRole)
 });
