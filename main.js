@@ -25,13 +25,9 @@ client.once('ready', () =>{
     client.user.setActivity("The prefix is +")
 });
 
-client.on('guildMemberAdd', guildMember =>{
-    let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'untrusted');
-
-    guildMember.roles.add(welcomeRole);
-    guildMember.guild.channels.cache.get('780499363369713705').send(`<@#{guildMember.user.id}> just joined the server`)
-});
-
+bot.on('guildMemberAdd' , member => {
+    member.guild.channels.get('780499363369713705').send("Thanks for joining")
+})
 
 client.on('message' , message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
