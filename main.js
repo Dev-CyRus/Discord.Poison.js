@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const DisTube = require('distube');
 
 const client = new Discord.Client();
 
@@ -16,18 +15,11 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-const distube = new require('distube')
-
-client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true});
-
 client.once('ready', () =>{
     console.log('Poison is Online!')
     client.user.setActivity("The prefix is +")
 });
 
-bot.on('guildMemberAdd' , member => {
-    member.guild.channels.get('780499363369713705').send("Thanks for joining")
-})
 
 client.on('message' , message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
