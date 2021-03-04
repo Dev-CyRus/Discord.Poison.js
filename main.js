@@ -41,6 +41,8 @@ client.on('message' , message =>{
         client.commands.get('rule').execute(message, args, Discord);
     } else if (command == 'clear'){
         client.commands.get('clear').execute(message, args);
+    } else if (command == 'mc2'){
+        client.commands.get('mc2').execute(message, args, Discord);
     }
 });
 
