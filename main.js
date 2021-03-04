@@ -43,6 +43,8 @@ client.on('message' , message =>{
         client.commands.get('clear').execute(message, args);
     } else if (command == 'mc2'){
         client.commands.get('mc2').execute(message, args);
+    } else if (command == 'fb'){
+        client.commands.get('fb').execute(message, args);
     }
 });
 
