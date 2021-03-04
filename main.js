@@ -42,7 +42,7 @@ client.on('message' , message =>{
     } else if (command == 'clear'){
         client.commands.get('clear').execute(message, args);
     } else if (command == 'mc2'){
-        client.commands.get('mc2').execute(message, args, Discord);
+        client.commands.get('mc2').execute(message, args);
     }
 });
 
