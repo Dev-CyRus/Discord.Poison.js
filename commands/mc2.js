@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'rule',
+    name: 'mc2',
     description: "Sends minecraft creative mode server ip",
     execute(message, args, Discord) {
         const newEmbed = new Discord.MessageEmbed()
