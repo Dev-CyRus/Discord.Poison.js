@@ -45,6 +45,8 @@ client.on('message' , message =>{
         client.commands.get('mc2').execute(message, args);
     } else if (command == 'fb'){
         client.commands.get('fb').execute(message, args);
+    } else if (command == 'git'){
+        client.commands.get('git').execute(message, args)
     }
 });
 
