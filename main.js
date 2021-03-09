@@ -28,7 +28,7 @@ client.on('message' , message =>{
     const command = args.shift().toLowerCase();
 
     if (command === 'ping'){
-        client.commands.get('ping').execute(message, args);
+        client.commands.get('ping').execute(message, args, arguments, text, client);
     } else if (command == 'hi'){
         client.commands.get('hi').execute(message, args);
     } else if (command == 'youtube'){
@@ -47,7 +47,7 @@ client.on('message' , message =>{
         client.commands.get('fb').execute(message, args);
     } else if (command == 'git'){
         client.commands.get('git').execute(message, args)
-    }
+    };
 });
 
 client.login(process.env.TOKEN);
