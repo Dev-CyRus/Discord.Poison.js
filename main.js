@@ -28,7 +28,7 @@ client.on('message' , message =>{
     const command = args.shift().toLowerCase();
 
     if (command === 'ping'){
-        client.commands.get('ping').execute(message, args, arguments, text, client);
+        client.commands.get('ping').execute(message, args);
     } else if (command == 'hi'){
         client.commands.get('hi').execute(message, args);
     } else if (command == 'youtube'){
