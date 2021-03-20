@@ -49,6 +49,8 @@ client.on('message' , message =>{
         client.commands.get('git').execute(message, args)
     } else if (command == 'ticket'){
         client.commands.get('ticket').execute(message, args, client, Discord)
+    } else if (command == 'pubgid'){
+        client.commands.get('pubgid').execute(message, args);
     };
 });
 

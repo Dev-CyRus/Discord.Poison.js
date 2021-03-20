@@ -17,7 +17,7 @@ module.exports = {
         VIEW_CHANNEL: true,
       });
   
-      const reactionMessage = await channel.send("Thank you for contacting support!");
+      const reactionMessage = await channel.send("Thank you for contacting support! Please wait we are mentioning staff <@&800670859811225630>");
   
       try {
         await reactionMessage.react("🔒");
