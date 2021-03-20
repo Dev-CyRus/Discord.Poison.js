@@ -20,6 +20,9 @@ client.once('ready', () =>{
     client.user.setActivity("The prefix is +")
 });
 
+client.on('guildMemberAdd', member => {
+    member.guild.channels.get('780499363369713705').send("Thanks for joining"); 
+});
 
 client.on('message' , message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
