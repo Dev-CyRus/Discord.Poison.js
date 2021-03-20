@@ -47,6 +47,8 @@ client.on('message' , message =>{
         client.commands.get('fb').execute(message, args);
     } else if (command == 'git'){
         client.commands.get('git').execute(message, args)
+    } else if (command == 'ticket'){
+        client.commands.get('ticket').execute(message, args, client, Discord)
     };
 });
 
