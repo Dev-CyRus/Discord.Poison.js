@@ -20,8 +20,11 @@ client.once('ready', () =>{
     client.user.setActivity("The prefix is +")
 });
 
-client.on('guildMemberAdd', member => {
-    member.guild.channels.get('780499363369713705').send("Thanks for joining"); 
+client.on('guildMemberAdd', guildMember => {
+    let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === '▬▬▬ 【 untrusted 】▬▬▬');
+
+    guildMember.roles.add(welcomeRole);
+    guildMember.guild.channels.cache.get('780499363369713705').send(`<@${guildMember.user.id}> A new user has joined the server!`)
 });
 
 client.on('message' , message =>{

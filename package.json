@@ -23,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/Dev-CyRus/Discord.Poison.js/issues"
   },
-  "homepage": "https://github.com/Dev-CyRus/Discord.Poison.js#readme"
+  "homepage": "https://github.com/Dev-CyRus/Discord.Poison.js#readme",
+  "devDependencies": {}
 }
