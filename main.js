@@ -17,7 +17,7 @@ for(const file of commandFiles){
 
 client.once('ready', () =>{
     console.log('Poison is Online!')
-    client.user.setActivity("The prefix is +")
+    client.user.setActivity("Type +ticket for help")
 });
 
 client.on('guildMemberAdd', guildMember => {
@@ -60,4 +60,4 @@ client.on('message' , message =>{
     };
 });
 
-client.login(process.env.TOKEN);
+client.login(process.env.BOTTOKEN);
