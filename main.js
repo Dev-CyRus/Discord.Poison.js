@@ -24,7 +24,7 @@ client.on('guildMemberAdd', guildMember => {
     let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === '▬▬▬ 【 untrusted 】▬▬▬');
 
     guildMember.roles.add(welcomeRole);
-    guildMember.guild.channels.cache.get('780499363369713705').send(`<@${guildMember.user.id}> A new user has joined the server!`)
+    guildMember.guild.channels.cache.get('780499363369713705').send(`<a:Hi:783931095200170015> <@${guildMember.user.id}> Thanks for joining the server. Don't forget to read the <#780500519659503656>!`)
 });
 
 client.on('message' , message =>{
@@ -56,8 +56,13 @@ client.on('message' , message =>{
     } else if (command == 'ticket'){
         client.commands.get('ticket').execute(message, args, client, Discord)
     } else if (command == 'pubgid'){
-        client.commands.get('pubgid').execute(message, args);
-    };
+        client.commands.get('pubgid').execute(message, args)
+    } else if (command == 'play'){
+      client.commands.get('play').execute(message, args)
+    } else if (command == 'leave'){
+      client.commands.get('leave').execute(message, args);
+    }
 });
+
 
 client.login(process.env.BOTTOKEN);
