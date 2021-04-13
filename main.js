@@ -24,7 +24,19 @@ client.on('guildMemberAdd', guildMember => {
     let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === '▬▬▬ 【 untrusted 】▬▬▬');
 
     guildMember.roles.add(welcomeRole);
-    guildMember.guild.channels.cache.get('780499363369713705').send(`<a:Hi:783931095200170015> <@${guildMember.user.id}> Thanks for joining the server. Don't forget to read the <#780500519659503656>!`)
+    guildMember.guild.channels.cache.get('780499363369713705').send(`
+━━━━━━━━━━━━━━━━━━━━━━━━
+              【 <a:ac:831413092775886891> 】 ****POISON'S LABORATORY****  【 <a:ac:831413092775886891> 】
+━━━━━━━━━━━━━━━━━━━━━━━━
+> Greetings  <@${guildMember.user.id}>, 
+> Welcome to POISON'S Official Discord Server
+**__Be sure to__** :
+━━━━━━━━━━━━━━━━━━━━━━━━
+<a:Pin:783924500063453186>│<a:arrow:783926999302799411> Please react ✅ on <#784811207784923136>
+<a:emg:795351407452618753>│<a:arrow:783926999302799411> Please read <#780500519659503656>
+<a:dc:795351406017118318>│<a:arrow:783926999302799411> Don't forget to take **role** from <#780707732721500161>
+<a:starr:795351408274046996>│<a:arrow:783926999302799411> Use <#780488699708047420> for ***chatting***
+━━━━━━━━━━━━━━━━━━━━━━━━`)
 });
 
 client.on('message' , message =>{
