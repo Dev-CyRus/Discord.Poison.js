@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 
+const Canvas = require('canvas');
+
 const client = new Discord.Client();
 
 const prefix = '+';
@@ -33,15 +35,58 @@ client.on('ready', () => {
     }, 10000); // Runs this every 10 seconds.
 });
 
-client.on('guildMemberAdd', guildMember => {
-    let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === '▬▬▬ 【 untrusted 】▬▬▬');
+client.on('guildMemberAdd', async member => {
+	const channel = member.guild.channels.cache.find(ch => ch.name === '│🚾│ᴡᴇʟᴄᴏᴍᴇ');
+	if (!channel) return;
 
-    guildMember.roles.add(welcomeRole);
-    guildMember.guild.channels.cache.get('780499363369713705').send(`
+	const canvas = Canvas.createCanvas(700, 250);
+	const ctx = canvas.getContext('2d');
+
+	const background = await Canvas.loadImage('./wallpaper.jpg');
+	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+	ctx.strokeStyle = '#74037b';
+	ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+	ctx.font = '28px sans-serif';
+	ctx.fillStyle = '#ffffff';
+	ctx.fillText('Welcome to the server,', canvas.width / 2.5, canvas.height / 3.5);
+
+	const applyText = (canvas, text) => {
+	const ctx = canvas.getContext('2d');
+
+	// Declare a base size of the font
+	let fontSize = 70;
+
+	do {
+		// Assign the font to the context and decrement it so it can be measured again
+		ctx.font = `${fontSize -= 10}px sans-serif`;
+		// Compare pixel width of the text to the canvas minus the approximate avatar size
+	} while (ctx.measureText(text).width > canvas.width - 300);
+
+	// Return the result to use in the actual canvas
+	return ctx.font;
+};
+  
+	ctx.font = applyText(canvas, `${member.displayName}!`);
+	ctx.fillStyle = '#ffffff';
+	ctx.fillText(`${member.displayName}!`, canvas.width / 2.5, canvas.height / 1.8);
+
+	ctx.beginPath();
+	ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
+	ctx.closePath();
+	ctx.clip();
+
+	const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
+	ctx.drawImage(avatar, 25, 25, 200, 200);
+
+	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
+
+	channel.send(`
+  ━━━━━━━━━━━━━━━━━━━━━━━━
+          【 <a:ac:831413092775886891> 】 ****POISON'S LABORATORY****  【 <a:ac:831413092775886891> 】
 ━━━━━━━━━━━━━━━━━━━━━━━━
-              【 <a:ac:831413092775886891> 】 ****POISON'S LABORATORY****  【 <a:ac:831413092775886891> 】
-━━━━━━━━━━━━━━━━━━━━━━━━
-> Greetings  <@${guildMember.user.id}>, 
+> Greetings  ${member}, 
 > Welcome to POISON'S Official Discord Server
 **__Be sure to__** :
 ━━━━━━━━━━━━━━━━━━━━━━━━
@@ -49,8 +94,9 @@ client.on('guildMemberAdd', guildMember => {
 <a:emg:795351407452618753>│<a:arrow:783926999302799411> Please read <#780500519659503656>
 <a:dc:795351406017118318>│<a:arrow:783926999302799411> Don't forget to take **role** from <#780707732721500161>
 <a:starr:795351408274046996>│<a:arrow:783926999302799411> Use <#780488699708047420> for ***chatting***
-━━━━━━━━━━━━━━━━━━━━━━━━`)
+━━━━━━━━━━━━━━━━━━━━━━━━`, attachment);
 });
+
 
 client.on('message' , message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
